@@ -5,9 +5,17 @@ import java.util.Scanner;
 public class CyclesTaskSeven {
     static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) { // тут логика
+
+    public static void main(String[] args) {
+        String x = "3";
+        String y = "dfr";
+        String z = "33";
+        System.out.println("Число X = " + x);
+        System.out.println("Число Y = " + y);
+        System.out.println("Число Z = " + z);
         int arrayLength = getArrayLength();
         String[] arrayNumbs = fillingArray(arrayLength);
+        checkArray(arrayNumbs, x, y, z);
     }
 
     private static int getArrayLength() {
@@ -37,43 +45,22 @@ public class CyclesTaskSeven {
         return arrayNumbs;
     }
 
+    private static void checkArray(String[] arrayNumbs, String x, String y, String z) {
+        for (String arrayNumb : arrayNumbs) {
+            if (arrayNumb.equals(x)) {
+                System.out.println("Данное значение имеется в константах: " + arrayNumb);
+            } else if (arrayNumb.equals(y)) {
+                System.out.println("Данное значение имеется в константах: " + arrayNumb);
+            } else if (arrayNumb.equals(z)) {
+                System.out.println("Данное значение имеется в константах: " + arrayNumb);
+            } else {
+                System.out.print("");
+            }
 
-
+        }
+    }
 }
 
 
-//        do {
-//            // тело цикла
-//        } while (condition);
-
-//        if (condition1) {
-//    ...
-//        } else if (condition2) {
-//    ...
-//        } else if (condition3) {
-//    ...
-//        } else if (condition4) {
-//    ...
-//        }
 
 
-//    private static int getArrayLength() {
-//        System.out.println("Введите длину массива: ");
-//        int arrayLength;
-//        if (scanner.hasNextInt()) { // истина если введённое число int
-//            arrayLength = scanner.nextInt();
-//            if (arrayLength > 0){
-//                System.out.println("Длина массива: " + arrayLength);
-//                return arrayLength;
-//            } else {
-//                System.out.println("Ошибка. Длина массива это целое положительное число.");
-//                scanner.nextLine();
-//                arrayLength = getArrayLength();
-//            }
-//        } else {
-//            System.out.println("Ошибка. Длина массива это целое положительное число.");
-//            scanner.next();
-//            arrayLength = getArrayLength();
-//        }
-//        return arrayLength;
-//    }
