@@ -1,5 +1,6 @@
 package com.appline.task10;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CyclesTaskTen {
@@ -8,8 +9,12 @@ public class CyclesTaskTen {
     public static void main(String[] args) {
         int numberOfColumns = getNumberOfColumns();
         int numberOfLines = getNumberOfLines();
-        int[][] numbsMatrix = fillingMatrix(numberOfColumns, numberOfLines);
+        int[][] numbsMatrix = printMatrix(numberOfColumns, numberOfLines);
+        //int[][] numbsMatrixFull = fillingMatrix(numberOfColumns, numberOfLines);
     }
+
+
+
 
     private static int getNumberOfColumns() {
         System.out.println("Введите количество столбцов матрицы: ");
@@ -51,16 +56,36 @@ public class CyclesTaskTen {
         return numberOfLines;
     }
 
-    private static int[][] fillingMatrix(int numberOfColumns, int numberOfLines) {
+    private static int[][] printMatrix(int numberOfColumns, int numberOfLines) {
         int[][] numbsMatrix = new int[numberOfLines][numberOfColumns];
-
         for (int i = 0; i < numberOfLines; i++){  // идём по строкам
             for (int j = 0; j < numberOfColumns;  j++){  // идём по столбцам
-                System.out.print(" " + numbsMatrix[i][j] + " ");  // вывод элемента
+                System.out.println("Введите элемент " + "i_"+ i + " " + "j_" + j);
+                numbsMatrix[i][j] = scanner.nextInt();
             }
             System.out.println(); // перенос строки ради визуального сохранения табличной формы
         }
+        System.out.print(Arrays.deepToString(numbsMatrix));
         return numbsMatrix;
     }
+
+    private static int[][] fillingMatrix(int numberOfColumns, int numberOfLines){
+        int[][] numbsMatrixFull = new int[numberOfLines][numberOfColumns];
+        for (int i = 0; i < numbsMatrixFull.length; i++) {
+            for (int j = 0; j < numbsMatrixFull[i].length; j++) {
+                numbsMatrixFull[i][j]=j+1;
+            }
+        }
+        for (int[] anArr : numbsMatrixFull) {
+            for (int anAnArr : anArr) {
+                System.out.print(anAnArr + " ");
+            }
+            System.out.println();
+        }
+        return numbsMatrixFull;
+
+    }
+
+
 
 }
