@@ -10,9 +10,9 @@ public class CyclesTaskSeven {
         String x = "3";
         String y = "dfr";
         String z = "33";
-        System.out.println("Число X = " + x);
-        System.out.println("Число Y = " + y);
-        System.out.println("Число Z = " + z);
+        System.out.println("Значение X = " + x);
+        System.out.println("Значение Y = " + y);
+        System.out.println("Значение Z = " + z);
         int arrayLength = getArrayLength();
         String[] arrayNumbs = fillingArray(arrayLength);
         checkArray(arrayNumbs, x, y, z);

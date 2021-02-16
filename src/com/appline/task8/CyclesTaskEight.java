@@ -8,7 +8,6 @@ public class CyclesTaskEight {
     public static void main(String[] args) {
         int number = getPositiveInt();
         checkResult(number);
-
     }
 
     private static void checkResult() {
