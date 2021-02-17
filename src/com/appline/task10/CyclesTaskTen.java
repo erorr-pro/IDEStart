@@ -10,10 +10,7 @@ public class CyclesTaskTen {
         int numberOfColumns = getNumberOfColumns();
         int numberOfLines = getNumberOfLines();
         int[][] numbsMatrix = printMatrix(numberOfColumns, numberOfLines);
-        //int[][] numbsMatrixFull = fillingMatrix(numberOfColumns, numberOfLines);
     }
-
-
 
 
     private static int getNumberOfColumns() {
@@ -58,34 +55,21 @@ public class CyclesTaskTen {
 
     private static int[][] printMatrix(int numberOfColumns, int numberOfLines) {
         int[][] numbsMatrix = new int[numberOfLines][numberOfColumns];
-        for (int i = 0; i < numberOfLines; i++){  // идём по строкам
-            for (int j = 0; j < numberOfColumns;  j++){  // идём по столбцам
-                System.out.println("Введите элемент " + "i_"+ i + " " + "j_" + j);
+        for (int i = 0; i < numberOfLines; i++) {  // идём по строкам
+            for (int j = 0; j < numberOfColumns; j++) {  // идём по столбцам
+                System.out.println("Введите элемент " + "[" + i + "]" + "[" + j + "]");
                 numbsMatrix[i][j] = scanner.nextInt();
             }
             System.out.println(); // перенос строки ради визуального сохранения табличной формы
         }
-        System.out.print(Arrays.deepToString(numbsMatrix));
+        System.out.println("Многомерный массив: " + Arrays.deepToString(numbsMatrix));
+        int[][] numbersCopy = Arrays.copyOf(numbsMatrix, 1);
+
+        for (int i = 0; i < numberOfColumns; i++) {
+            numbsMatrix[0][i] *=3;
+        }
+
+        System.out.println("Первая строка многомерного массива х 3: " + Arrays.deepToString(numbersCopy));
         return numbsMatrix;
     }
-
-    private static int[][] fillingMatrix(int numberOfColumns, int numberOfLines){
-        int[][] numbsMatrixFull = new int[numberOfLines][numberOfColumns];
-        for (int i = 0; i < numbsMatrixFull.length; i++) {
-            for (int j = 0; j < numbsMatrixFull[i].length; j++) {
-                numbsMatrixFull[i][j]=j+1;
-            }
-        }
-        for (int[] anArr : numbsMatrixFull) {
-            for (int anAnArr : anArr) {
-                System.out.print(anAnArr + " ");
-            }
-            System.out.println();
-        }
-        return numbsMatrixFull;
-
-    }
-
-
-
 }
