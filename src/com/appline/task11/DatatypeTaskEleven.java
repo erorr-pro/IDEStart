@@ -45,10 +45,13 @@ public class DatatypeTaskEleven {
             System.out.println("Числа равны!");
         } else if (numberInt < numberDouble) {
             System.out.println("Наибольшее число " + numberDouble);
+            System.out.println("Наименьшее число " + (double) numberInt);
         } else if (numberInt > numberDouble) {
             System.out.println("Наибольшее число " + (double) numberInt);
+            System.out.println("Наименьшее число " + numberDouble); // заведомо double
         } else {
             System.out.println("Непредвиденная ошибка!");
         }
     }
+
 }
