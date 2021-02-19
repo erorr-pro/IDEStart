@@ -1,9 +1,5 @@
 package com.appline.task12;
 
-import sun.awt.HKSCS;
-
-import java.util.Scanner;
-
 public class DatatypeTaskTwelve {
     static String stopWord = "I like Java!!!";
 
