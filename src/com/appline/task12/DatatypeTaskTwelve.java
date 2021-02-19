@@ -5,7 +5,6 @@ import sun.awt.HKSCS;
 import java.util.Scanner;
 
 public class DatatypeTaskTwelve {
-    // static Scanner scanner = new Scanner(System.in);
     static String stopWord = "I like Java!!!";
 
     public static void main(String[] args) {
