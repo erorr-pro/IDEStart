@@ -17,7 +17,7 @@ public class FinalOne {
         if (scanner.hasNextDouble()) {
             course = scanner.nextDouble();
             course = course * 100;
-            course = (float) Math.round(course);
+            course = (double) Math.round(course);
             course = course / 100;
             String courseCut = String.format("%.2f", course);
             System.out.println("Курс доллара: " + courseCut + " RUB");
@@ -35,7 +35,7 @@ public class FinalOne {
         if (scanner.hasNextDouble()) {
             amountMoney = scanner.nextDouble();
             amountMoney = amountMoney * 100;
-            amountMoney = (float) Math.round(amountMoney);
+            amountMoney = (double) Math.round(amountMoney);
             amountMoney = amountMoney / 100;
             String amountMoneyCut = String.format("%.2f", amountMoney);
             System.out.println("Количество рублей для обмена: " + amountMoneyCut);
@@ -49,6 +49,6 @@ public class FinalOne {
 
     private static void resultMoney(double course, double amountMoney) {
         double result = course / amountMoney;
-        System.out.println("Итого: за " + amountMoney + " рублей получим " + String.format("%.2f", result) + " USD");
+        System.out.println("Итого: " + String.format("%.2f", result) + " USD");
     }
 }
