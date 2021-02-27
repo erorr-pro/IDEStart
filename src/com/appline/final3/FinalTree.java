@@ -9,15 +9,12 @@ public class FinalTree {
         int numberOfLine = getNumberOfLine();
 
         List<String> strings = getLine(numberOfLine);
-        System.out.println("strings: " + strings);
+        System.out.println("Введённые строки: " + strings);
 
-        List<Integer> countSymbols = verifyLine(strings, numberOfLine);
-        System.out.println("countSymbols" + countSymbols);
+        List<Integer> allSymbols = verifyLine(strings, numberOfLine);
+        System.out.println("Количество символов во всех строках: " + allSymbols);
 
-        compareAndPrintString(strings, countSymbols, numberOfLine);
-
-
-        //verifyLine(List<String> strings);
+        compareAndPrintString(strings, allSymbols);
     }
 
     private static int getNumberOfLine() {
@@ -46,29 +43,33 @@ public class FinalTree {
         int i;
         for (i = numberOfLine - (numberOfLine - 1); i <= numberOfLine; i++) {
             System.out.println("Введите строку " + (numberOfLine - (numberOfLine - i)));
-            String strLine = scanner.nextLine(); // разделяет по пробелу
+            String strLine = scanner.next(); // разделяет по пробелу
             strings.add(strLine);
         }
         return strings;
     }
 
     public static List<Integer> verifyLine(List<String> strings, int numberOfLine) {
-        List<Integer> countSymbols = new ArrayList<>();
+        List<Integer> allSymbols = new ArrayList<>();
         int i;
         for (i = numberOfLine - (numberOfLine - 1); i <= numberOfLine; i++) {
-            int count = (int) strings.get(i-1).chars().distinct().count(); //chars() codePoints()
-            countSymbols.add(count);
+            int count = (int) strings.get(i - 1).chars().distinct().count(); //chars() codePoints()
+            allSymbols.add(count);
         }
-        return countSymbols;
+        return allSymbols;
     }
 
-    public static void compareAndPrintString(List<String> strings, List<Integer> countSymbols, int numberOfLine) {
-        int max = Collections.max(countSymbols);
-        System.out.println("Максимальное количество символов в строке: " + max);
-        //System.out.println(strings.get(max));
+    public static void compareAndPrintString(List<String> strings, List<Integer> allSymbols) {
+        int maxSymbols = Collections.max(allSymbols);
+        System.out.println("Максимальное количество символов: " + maxSymbols);
 
+        List<Integer> resultNumberSymbols = new ArrayList<>();
+        for (int i = 0; i <= allSymbols.size() - 1; i++) {
+
+            if (maxSymbols == allSymbols.get(i)) {
+                resultNumberSymbols.add(i);
+            }
+        }
+        System.out.println("Ответ: " + strings.get(resultNumberSymbols.get(0)));
     }
-
-
-
 }
