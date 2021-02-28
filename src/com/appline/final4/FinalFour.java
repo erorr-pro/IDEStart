@@ -27,7 +27,7 @@ public class FinalFour {
                 }
                 continue;
             }
-            if (answer.equals("Заархивированный вирус")) {
+            if (answer.equalsIgnoreCase("Заархивированный вирус")) {
                 System.out.println("Правильно!");
                 break;
             }
