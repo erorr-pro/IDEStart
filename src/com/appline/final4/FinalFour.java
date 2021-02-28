@@ -18,6 +18,7 @@ public class FinalFour {
             String answer = scanner.nextLine();
 
             if ("Подсказка".equalsIgnoreCase(answer)) {
+// (tryNum==0 && isNotPromptUsed) добавить если пользователь имеет право на подсказку только при первой попытке
                 if (isNotPromptUsed) {
                     System.out.println("Какая-то подсказка");
                     isNotPromptUsed = false;
