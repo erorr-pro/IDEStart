@@ -34,21 +34,18 @@ class FinalTwo {
 
         if (str.charAt(0) == 'x' & operation.equals("-")) { //x-2=8
             System.out.println("x=" + (thirdNumber + secondNumber));
-        }
-        if (str.charAt(0) == 'x' & operation.equals("+")) { //x+2=8
+        } else if (str.charAt(0) == 'x' & operation.equals("+")) { //x+2=8
             System.out.println("x=" + (thirdNumber - secondNumber));
-        }
-        if (str.charAt(2) == 'x' & operation.equals("-")) { //2-x=8
+        } else if (str.charAt(2) == 'x' & operation.equals("-")) { //2-x=8
             System.out.println("x=" + (thirdNumber + firstNumber));
-        }
-        if (str.charAt(2) == 'x' & operation.equals("+")) { //2+x=8
+        } else if (str.charAt(2) == 'x' & operation.equals("+")) { //2+x=8
             System.out.println("x=" + (thirdNumber - firstNumber));
-        }
-        if (str.charAt(4) == 'x' & operation.equals("-")) { //2-8=x
+        } else if (str.charAt(4) == 'x' & operation.equals("-")) { //2-8=x
             System.out.println("x=" + (firstNumber - secondNumber));
-        }
-        if (str.charAt(4) == 'x' & operation.equals("+")) { //2+8=x
+        } else if (str.charAt(4) == 'x' & operation.equals("+")) { //2+8=x
             System.out.println("x=" + (firstNumber + secondNumber));
+        } else {
+            System.out.println("Костыли не сработали");
         }
     }
 }
