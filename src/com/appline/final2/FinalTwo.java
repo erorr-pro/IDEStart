@@ -45,7 +45,7 @@ class FinalTwo {
         } else if (str.charAt(4) == 'x' & operation.equals("+")) { //2+8=x
             System.out.println("x=" + (firstNumber + secondNumber));
         } else {
-            System.out.println("Костыли не сработали");
+            System.out.println("Проверьте ввод");
         }
     }
 }
